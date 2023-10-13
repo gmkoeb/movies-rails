@@ -3,7 +3,7 @@
   <h3>Ainda não existe nenhum diretor cadastrado. <%= link_to "Clique aqui para cadastrar um novo diretor", "directors/new" %></h3>
 <%else%>
   <% @directors.each do |director| %>
-    <%= link_to director.name, "./show/"+director.name %>
+    <%= link_to director.name, "directors/details/"+director.name %>
   <%end%>
   <h3><%= link_to "Cadastrar novo diretor", "/directors/new" %></h3>
 <%end%>

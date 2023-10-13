@@ -3,7 +3,7 @@
   <h3>Ainda não existe nenhum gênero cadastrado. <%= link_to "Clique aqui para cadastrar um novo gênero", "genres/new" %></h3>
 <%else%>
   <%@genres.each do |genre|%>
-    <%= link_to genre.name, "genre/"+genre.name %>
+    <%= link_to genre.name, "genres/details/"+genre.name %>
   <%end%>
   <h3><%= link_to "Cadastrar novo gênero", "genres/new" %></h3>
 <%end%>
