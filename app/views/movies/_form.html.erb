@@ -1,0 +1,24 @@
+<%= form_with model: movie do | f | %>
+  <%= f.label 'Título:' %>
+  <%= f.text_field :title %>
+
+  <%= f.label 'Data de Lançamento:' %>
+  <%= f.date_field :released_at  %>
+
+  <%= f.label 'Sinopse:' %>
+  <%= f.text_area :synopsis %>
+
+  <%= f.label 'País de Origem:' %>
+  <%= f.text_field :country %>
+
+  <%= f.label 'Duração:' %>
+  <%= f.number_field :duration, :placeholder => 'Em minutos' %>
+
+  <%= f.label 'Diretor:' %>
+  <%= f.collection_select :director_id, Director.all, :id, :name %>
+
+  <%= f.label 'Gênero:' %>
+  <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+
+  <%= f.submit 'Cadastrar' %>
+<%end%>
