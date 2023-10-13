@@ -1,7 +1,6 @@
 class DirectorsController < ApplicationController
   def show
-    @director = Director.where(name: params[:director]).first
-    @movies = Movie.where(director_id: @director.id)
+    @directors = Director.all
   end
 
   def new
@@ -16,5 +15,10 @@ class DirectorsController < ApplicationController
       return redirect_to root_path
     end
     render :new
+  end
+
+  def director
+    @director = Director.where(name: params[:director]).first
+    @movies = Movie.where(director_id: @director.id)
   end
 end

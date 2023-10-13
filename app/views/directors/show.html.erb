@@ -1,17 +1,9 @@
-<h1><%= @director.name %></h1>
-<h2>Biografia:</h2>
-<div>
-  <p><strong>Nacionalidade:</strong><%= @director.nationality%></p>
-  <p><strong>Nasceu em:</strong><%= @director.date_of_birth%></p>
-  <p><strong>Gênero favorito:</strong><%= @director.favorite_genre%></p>
-</div>
-<h2>Filmes que dirigiu:</h2>
-<div>
-  <% @movies.each do |movie| %>
-    <p><strong>Título:</strong> <%=movie.title%></p>
-    <p><strong>Lançamento:</strong> <%=movie.released_at%></p>
-    <p><strong>Sinopse:</strong> <%=movie.synopsis%></p>
-    <p><strong>País de origem:</strong> <%=movie.country%></p>
-    <p><strong>Duração:</strong> <%=movie.duration%> <span>minutos</span></p>
+<h1>Diretores</h1>
+<%if @directors.length == 0 %>
+  <h3>Ainda não existe nenhum diretor cadastrado. <%= link_to "Clique aqui para cadastrar um novo diretor", "directors/new" %></h3>
+<%else%>
+  <% @directors.each do |director| %>
+    <%= link_to director.name, "./show/"+director.name %>
   <%end%>
-</div>
+  <h3><%= link_to "Cadastrar novo diretor", "/directors/new" %></h3>
+<%end%>
