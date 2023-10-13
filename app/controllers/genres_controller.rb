@@ -1,7 +1,13 @@
 class GenresController < ApplicationController
+  def show
+    @genre = Genre.where(name: params[:genre].capitalize).first
+    @movies = Movie.where(genre_id: @genre.id)
+  end
+
   def new
     @genre = Genre.new
   end
+
   def create
     @genre = Genre.new(name: params[:genre][:name])
 

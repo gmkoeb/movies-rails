@@ -1,0 +1,11 @@
+<h1>Gêneros:</h1>
+<%@genres.each do |genre|%>
+  <%= link_to genre.name, genre.name %>
+<%end%>
+
+<h1>Diretores:</h1>
+<ul>
+<%@directors.each do |director|%>
+  <li><%=director.name%></li>
+<%end%>
+</ul>
