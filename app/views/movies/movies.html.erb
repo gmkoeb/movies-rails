@@ -1,0 +1,9 @@
+<h1>Filmes:</h1>
+<%if @movies.length == 0 %>
+  <h3>Ainda não existe nenhum gênero cadastrado. <%= link_to "Clique aqui para cadastrar um novo gênero", "movies/new" %></h3>
+<%else%>
+  <%@movies.each do |movie|%>
+    <%= link_to movie.title, "movies/details/"+movie.title %>
+  <%end%>
+  <h3><%= link_to "Cadastrar novo filme", new_movie_path %></h3>
+<%end%>

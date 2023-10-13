@@ -29,7 +29,7 @@ class GenresController < ApplicationController
     @genre = Genre.find(params[:id])
 
     if @genre.update(name: params[:genre][:name])
-      return redirect_to '/genres/details/' + @genre.name 
+      return redirect_to '/genres/details/' + @genre.name
     end
 
     render :edit

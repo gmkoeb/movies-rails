@@ -31,7 +31,7 @@ class DirectorsController < ApplicationController
 
     if @director.update(name: params[:director][:name], nationality: params[:director][:nationality], 
                     date_of_birth: params[:director][:date_of_birth], favorite_genre: params[:director][:genre])
-      return redirect_to '/directors/details/' + @director.name 
+      return redirect_to '/directors/details/' + @director.name
     end
 
     render :edit
