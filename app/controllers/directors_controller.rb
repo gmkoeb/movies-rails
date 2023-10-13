@@ -1,4 +1,9 @@
 class DirectorsController < ApplicationController
+  def show
+    @director = Director.where(name: params[:director].capitalize).first
+    @movies = Movie.where(director_id: @director.id)
+  end
+
   def new
     @director = Director.new
   end
