@@ -1,8 +1,13 @@
 class GenresController < ApplicationController
-  def show
+  def genres
     @genres = Genre.all
   end
 
+  def genre
+    @genre = Genre.where(name: params[:genre].capitalize).first
+    @movies = Movie.where(genre_id: @genre.id)
+  end
+  
   def new
     @genre = Genre.new
   end
@@ -14,10 +19,5 @@ class GenresController < ApplicationController
       return redirect_to root_path
     end
     render :new
-  end
-
-  def genre
-    @genre = Genre.where(name: params[:genre].capitalize).first
-    @movies = Movie.where(genre_id: @genre.id)
   end
 end
