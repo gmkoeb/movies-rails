@@ -1,0 +1,5 @@
+<%= form_with model: Genre.new do | f | %>
+  <%= f.label 'Cadastrar gênero' %>
+  <%= f.text_field :name, :placeholder => 'Ex: Aventura' %>
+  <%= f.submit 'Cadastrar' %>
+<%end%>
