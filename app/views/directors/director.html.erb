@@ -15,3 +15,5 @@
     <p><strong>Duração:</strong> <%=movie.duration%> <span>minutos</span></p>
   <%end%>
 </div>
+
+<%= link_to 'Editar', "/directors/"+@director.id.to_s+"/edit"  %>

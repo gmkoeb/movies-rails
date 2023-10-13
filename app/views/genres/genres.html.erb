@@ -5,5 +5,5 @@
   <%@genres.each do |genre|%>
     <%= link_to genre.name, "genres/details/"+genre.name %>
   <%end%>
-  <h3><%= link_to "Cadastrar novo gênero", "genres/new" %></h3>
+  <h3><%= link_to "Cadastrar novo gênero", new_genre_path %></h3>
 <%end%>

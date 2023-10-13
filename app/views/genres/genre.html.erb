@@ -7,3 +7,4 @@
   <p><strong>Duração:</strong> <%=movie.duration%> <span>minutos</span></p>
   <p><strong>Diretor:</strong> <%=movie.director.name%></p>
 <%end%>
+<%= link_to 'Editar', "/genres/"+@genre.id.to_s+"/edit"  %>

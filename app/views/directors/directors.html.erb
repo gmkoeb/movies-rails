@@ -5,5 +5,5 @@
   <% @directors.each do |director| %>
     <%= link_to director.name, "directors/details/"+director.name %>
   <%end%>
-  <h3><%= link_to "Cadastrar novo diretor", "/directors/new" %></h3>
+  <h3><%= link_to "Cadastrar novo diretor", new_director_path %></h3>
 <%end%>

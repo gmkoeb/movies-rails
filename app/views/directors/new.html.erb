@@ -1,16 +1,2 @@
 <h1>Cadastrar novo diretor</h1>
-<%= form_with model: @director do | f | %>
-  <%= f.label 'Nome:' %>
-  <%= f.text_field :name %>
-
-  <%= f.label 'Data de nascimento:' %>
-  <%= f.date_field :date_of_birth  %>
-
-  <%= f.label 'Nacionalidade' %>
-  <%= f.text_field :nationality %>
-
-  <%= f.label 'Gênero Favorito:' %>
-  <%= f.text_field :genre %>
-
-  <%= f.submit 'Cadastrar' %>
-<%end%>
+<%=render partial:'form', locals: { director: @director }%>
