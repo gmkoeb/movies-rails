@@ -1,10 +1,18 @@
 <h1>Gêneros:</h1>
-<%@genres.each do |genre|%>
-  <%= link_to genre.name, "genre/"+genre.name %>
+<%if @genres.length == 0 %>
+  <h3>Ainda não existe nenhum gênero cadastrado. <%= link_to "Clique aqui para cadastrar um novo gênero", "genres/new" %></h3>
+<%else%>
+  <%@genres.each do |genre|%>
+    <%= link_to genre.name, "genre/"+genre.name %>
+  <%end%>
+  <h3><%= link_to "Cadastrar novo gênero", "genres/new" %></h3>
 <%end%>
-<h2><%= link_to "Cadastrar novo gênero", "genres/new" %></h2>
 <h1>Diretores:</h1>
-<%@directors.each do |director|%>
-  <%= link_to director.name, "director/"+director.name %>
+<%if @directors.length == 0 %>
+  <h3>Ainda não existe nenhum diretor cadastrado. <%= link_to "Clique aqui para cadastrar um novo diretor", "directors/new" %></h3>
+<%else%>
+  <% @directors.each do |director| %>
+    <%= link_to director.name, "director/"+director.name %>
+  <%end%>
+  <h3><%= link_to "Cadastrar novo diretor", "directors/new" %></h3>
 <%end%>
-<h2><%= link_to "Cadastrar novo diretor", "directors/new" %></h2>

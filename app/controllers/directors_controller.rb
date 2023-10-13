@@ -1,6 +1,6 @@
 class DirectorsController < ApplicationController
   def show
-    @director = Director.where(name: params[:director].capitalize).first
+    @director = Director.where(name: params[:director]).first
     @movies = Movie.where(director_id: @director.id)
   end
 

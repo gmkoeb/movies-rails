@@ -10,7 +10,7 @@
   <%= f.text_field :nationality %>
 
   <%= f.label 'Gênero Favorito:' %>
-  <%= f.collection_select :genre, Genre.all, :name, :name %>
+  <%= f.text_field :genre %>
 
   <%= f.submit 'Cadastrar' %>
 <%end%>
