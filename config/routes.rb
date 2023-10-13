@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  get '/genres/:genre', to: 'genres#show'
-  get '/directors/:director', to: 'directors#show'
+  get '/genre/:genre', to: 'genres#show'
+  get '/director/:director', to: 'directors#show'
   resources :genres, only: [:new, :create]
-  resources :movies, only: [:show, :new, :create]
-  resources :directors, only: [:show, :new, :create]
+  resources :movies, only: [:new, :create]
+  resources :directors, only: [:new, :create]
 end

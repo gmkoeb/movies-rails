@@ -1,9 +1,9 @@
 <h1>Gêneros:</h1>
 <%@genres.each do |genre|%>
-  <%= link_to genre.name, "genres/"+genre.name %>
+  <%= link_to genre.name, "genre/"+genre.name %>
 <%end%>
-
+<h2><%= link_to "Cadastrar novo gênero", "genres/new" %></h2>
 <h1>Diretores:</h1>
 <%@directors.each do |director|%>
-  <%= link_to director.name, "directors/"+director.name %>
+  <%= link_to director.name, "director/"+director.name %>
 <%end%>
