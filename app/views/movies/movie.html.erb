@@ -1,6 +1,10 @@
 <h1><%= @movie.title %></h1>
 <h2>Detalhes do filme: </h2>
-<p><strong>Lançamento:</strong> <%=@movie.released_at%></p>
+<%if @movie.released_at < DateTime.now()%>
+  <p><strong>Lançamento:</strong> Já lançou!</p>
+<%else%>
+  <p><strong>Lança no dia:</strong> <%=@movie.released_at%></p>
+<%end%>
 <p><strong>Sinopse:</strong> <%=@movie.synopsis%></p>
 <p><strong>País de origem:</strong> <%=@movie.country%></p>
 <p><strong>Duração:</strong> <%=@movie.duration%> <span>minutos</span></p>
